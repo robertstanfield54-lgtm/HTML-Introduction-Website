@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How to Show Three Different Fonts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 1.5rem auto;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        pre {
+            background: #222;
+            color: #eee;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        .example1 {
+            font-family: "Times New Roman", serif;
+            font-size: 20px;
+            color: darkred;
+        }
+
+        .example2 {
+            font-family: "Courier New", monospace;
+            font-size: 18px;
+            color: darkblue;
+        }
+
+        .example3 {
+            font-family: Verdana, sans-serif;
+            font-size: 22px;
+            color: darkgreen;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>How to Show Three Different Fonts</h1>
+
+        <p>
+            You can change the font type, color, and size of text using CSS.
+            One way to do this is to create classes in the 
+            <code>&lt;style&gt;</code> section and then apply them to
+            different paragraphs.
+        </p>
+
+        <h2>Example CSS and HTML</h2>
+
+        <p>Here is an example of the code:</p>
+
+        <pre>
+&lt;style&gt;
+    .example1 {
+        font-family: "Times New Roman", serif;
+        font-size: 20px;
+        color: darkred;
+    }
+
+    .example2 {
+        font-family: "Courier New", monospace;
+        font-size: 18px;
+        color: darkblue;
+    }
+
+    .example3 {
+        font-family: Verdana, sans-serif;
+        font-size: 22px;
+        color: darkgreen;
+    }
+&lt;/style&gt;
+
+&lt;p class="example1"&gt;This is Times New Roman, dark red, 20px.&lt;/p&gt;
+&lt;p class="example2"&gt;This is Courier New, dark blue, 18px.&lt;/p&gt;
+&lt;p class="example3"&gt;This is Verdana, dark green, 22px.&lt;/p&gt;
+        </pre>
+
+        <h2>What It Looks Like</h2>
+
+        <p class="example1">This is Times New Roman, dark red, 20px.</p>
+        <p class="example2">This is Courier New, dark blue, 18px.</p>
+        <p class="example3">This is Verdana, dark green, 22px.</p>
+
+        <a href="index.html">← Back to Home Page</a>
+    </main>
+</body>
+</html>

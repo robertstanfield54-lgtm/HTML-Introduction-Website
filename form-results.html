@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Results Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 1.5rem auto;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        code {
+            background: #eee;
+            padding: 0.1rem 0.25rem;
+            border-radius: 3px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        strong {
+            display: inline-block;
+            width: 190px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Form Results Page</h1>
+
+        <p>
+            This page receives the information from
+            <code>form.html</code>. The values you entered are shown below.
+            We used <code>method="get"</code> on the form, so the data is
+            sent in the URL and then displayed here with a little bit of
+            JavaScript.
+        </p>
+
+        <h2>Your Submitted Information</h2>
+
+        <ul>
+            <li><strong>Name:</strong> <span id="result-name"></span></li>
+            <li><strong>Email:</strong> <span id="result-email"></span></li>
+            <li><strong>Favorite drink:</strong> <span id="result-drink"></span></li>
+            <li><strong>Course:</strong> <span id="result-course"></span></li>
+            <li><strong>Wants updates (newsletter):</strong> <span id="result-newsletter"></span></li>
+            <li><strong>Comments:</strong> <span id="result-comments"></span></li>
+            <li><strong>Hidden value:</strong> <span id="result-hidden"></span></li>
+        </ul>
+
+        <p>
+            In a real website, a server-side program (for example: PHP, Python,
+            or another language) could use this same information to store it in
+            a database or email the results back to you.
+        </p>
+
+        <a href="form.html">← Back to Form</a><br>
+        <a href="index.html">← Back to Home Page</a>
+    </main>
+
+    <script>
+        // Read the query string values from the URL
+        const params = new URLSearchParams(window.location.search);
+
+        function getValue(name, fallback) {
+            const value = params.get(name);
+            return value && value.trim() !== "" ? value : fallback;
+        }
+
+        // Fill in each result field
+        document.getElementById('result-name').textContent =
+            getValue('name', '(not provided)');
+
+        document.getElementById('result-email').textContent =
+            getValue('email', '(not provided)');
+
+        document.getElementById('result-drink').textContent =
+            getValue('drink', '(not selected)');
+
+        // Make course a little nicer-looking
+        let course = getValue('course', '(not selected)');
+        if (course === 'database') course = 'Database';
+        if (course === 'html') course = 'HTML';
+        if (course === 'oldtestament') course = 'Old Testament';
+        document.getElementById('result-course').textContent = course;
+
+        // Checkbox: show Yes / No
+        const newsletter = params.get('newsletter') === 'yes' ? 'Yes' : 'No';
+        document.getElementById('result-newsletter').textContent = newsletter;
+
+        // Comments
+        document.getElementById('result-comments').textContent =
+            getValue('comments', '(no comments)');
+
+        // Hidden value
+        document.getElementById('result-hidden').textContent =
+            getValue('hiddenValue', '(none)');
+    </script>
+</body>
+</html>

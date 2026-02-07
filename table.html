@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How to Make a Table in HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 1.5rem auto;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        pre {
+            background: #222;
+            color: #eee;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            border: 1px solid #333;
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        th {
+            background: #ddd;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>How to Make a Table in HTML</h1>
+
+        <p>
+            In HTML, tables are created using the <code>&lt;table&gt;</code> tag.
+            Each row is inside <code>&lt;tr&gt;</code>, headers go in
+            <code>&lt;th&gt;</code>, and regular cells go in <code>&lt;td&gt;</code>.
+        </p>
+
+        <h2>Basic Example</h2>
+
+        <p>This is an example of the code for a simple table:</p>
+
+        <pre>
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Class&lt;/th&gt;
+        &lt;th&gt;Day&lt;/th&gt;
+        &lt;th&gt;Time&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Database Class&lt;/td&gt;
+        &lt;td&gt;Monday&lt;/td&gt;
+        &lt;td&gt;6:00 PM&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Old Testament&lt;/td&gt;
+        &lt;td&gt;Wednesday&lt;/td&gt;
+        &lt;td&gt;3:00 PM&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+        </pre>
+
+        <h2>What the Table Looks Like</h2>
+
+        <table>
+            <tr>
+                <th>Class</th>
+                <th>Day</th>
+                <th>Time</th>
+            </tr>
+            <tr>
+                <td>Database Class</td>
+                <td>Monday</td>
+                <td>6:00 PM</td>
+            </tr>
+            <tr>
+                <td>Old Testament</td>
+                <td>Wednesday</td>
+                <td>3:00 PM</td>
+            </tr>
+        </table>
+
+        <a href="index.html">← Back to Home Page</a>
+    </main>
+</body>
+</html>

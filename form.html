@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form – Send Information to Another Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 1.5rem auto;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        pre {
+            background: #222;
+            color: #eee;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        form {
+            margin-top: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-top: 0.5rem;
+            font-weight: bold;
+        }
+
+        .field-group {
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            max-width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.25rem;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 80px;
+        }
+
+        input[type="submit"] {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Form – Sending Information to Another Page</h1>
+
+        <p>
+            This example shows how to send information from one page
+            (<code>form.html</code>) to another page
+            (<code>form-results.html</code>) using an HTML form.
+        </p>
+
+        <p>
+            The form below includes:
+        </p>
+        <ul>
+            <li>a text box</li>
+            <li>radio buttons</li>
+            <li>a list selector</li>
+            <li>a choice box (checkbox)</li>
+            <li>a hidden parameter</li>
+            <li>and an email field for sending results</li>
+        </ul>
+
+        <h2>Example Form Code</h2>
+
+        <pre>
+&lt;form action="form-results.html" method="get"&gt;
+    &lt;!-- Text box --&gt;
+    &lt;label for="name"&gt;Your Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+
+    &lt;!-- Email field --&gt;
+    &lt;label for="email"&gt;Your Email (to receive results):&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+
+    &lt;!-- Radio buttons --&gt;
+    &lt;p&gt;Favorite drink:&lt;/p&gt;
+    &lt;input type="radio" id="coffee" name="drink" value="Coffee"&gt;
+    &lt;label for="coffee"&gt;Coffee&lt;/label&gt;
+    &lt;input type="radio" id="tea" name="drink" value="Tea"&gt;
+    &lt;label for="tea"&gt;Tea&lt;/label&gt;
+    &lt;input type="radio" id="refresher" name="drink" value="Refresher"&gt;
+    &lt;label for="refresher"&gt;Refresher&lt;/label&gt;
+
+    &lt;!-- List selector --&gt;
+    &lt;label for="course"&gt;Course you are working on:&lt;/label&gt;
+    &lt;select id="course" name="course"&gt;
+        &lt;option value="database"&gt;Database&lt;/option&gt;
+        &lt;option value="html"&gt;HTML&lt;/option&gt;
+        &lt;option value="oldtestament"&gt;Old Testament&lt;/option&gt;
+    &lt;/select&gt;
+
+    &lt;!-- Choice box (checkbox) --&gt;
+    &lt;label&gt;
+        &lt;input type="checkbox" name="newsletter" value="yes"&gt;
+        I would like to receive updates.
+    &lt;/label&gt;
+
+    &lt;!-- Text area (text box) --&gt;
+    &lt;label for="comments"&gt;Comments:&lt;/label&gt;
+    &lt;textarea id="comments" name="comments"&gt;&lt;/textarea&gt;
+
+    &lt;!-- Hidden parameter --&gt;
+    &lt;input type="hidden" name="hiddenValue" value="csc210-demo"&gt;
+
+    &lt;input type="submit" value="Send Form"&gt;
+&lt;/form&gt;
+        </pre>
+
+        <h2>Working Example</h2>
+
+        <form action="form-results.html" method="get">
+            <div class="field-group">
+                <label for="name">Your Name (text box):</label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <div class="field-group">
+                <label for="email">Your Email (to receive results):</label>
+                <input type="email" id="email" name="email">
+            </div>
+			
+			<p>
+    The form even sends along the email address you entered, so in a
+    real website a server could email your answers back to you.
+			</p>
+			
+            <div class="field-group">
+                <p><strong>Favorite drink (radio buttons):</strong></p>
+                <input type="radio" id="coffee" name="drink" value="Coffee">
+                <label for="coffee">Coffee</label><br>
+
+                <input type="radio" id="tea" name="drink" value="Tea">
+                <label for="tea">Tea</label><br>
+
+                <input type="radio" id="water" name="drink" value="Water">
+                <label for="water">Water</label>
+            </div>
+
+            <div class="field-group">
+                <label for="course">Course you are working on (list selector):</label>
+                <select id="course" name="course">
+                    <option value="database">Database</option>
+                    <option value="html">HTML</option>
+                    <option value="oldtestament">Old Testament</option>
+					<option value="under water Basket weaving">Under Water Basket Weaving</option>
+                </select>
+            </div>
+
+            <div class="field-group">
+                <label>
+                    <input type="checkbox" name="newsletter" value="yes">
+                    I would like to receive updates. (choice box)
+                </label>
+            </div>
+
+            <div class="field-group">
+                <label for="comments">Comments (text box):</label>
+                <textarea id="comments" name="comments"></textarea>
+            </div>
+
+            <!-- Hidden parameter -->
+            <input type="hidden" name="hiddenValue" value="csc210-demo">
+
+            <input type="submit" value="Send Form">
+        </form>
+
+        <a href="index.html">← Back to Home Page</a>
+    </main>
+</body>
+</html>
